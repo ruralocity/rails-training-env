@@ -1,9 +1,14 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ruby
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ruby",
+	"name": "Ubuntu",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/ruby:1-3.2-bullseye"
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/ruby:1": {
+			"version": "latest"
+		}
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -12,7 +17,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "ruby --version",
+	"postCreateCommand": "gem install rails",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
